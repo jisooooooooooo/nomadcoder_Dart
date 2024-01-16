@@ -1,3 +1,4 @@
 void main(){
-  final String name = 'jisoo';
+  late final String name;
+  name = 'jisoo';
 }
