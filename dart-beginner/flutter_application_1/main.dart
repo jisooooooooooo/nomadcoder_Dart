@@ -1,6 +1,7 @@
 void main(){
-  dynamic name;
-  if(name is String){
-
+  String? jisoo = 'jisoo';
+  jisoo = null;
+  if(jisoo != null){
+    jisoo?.isNotEmpty;
   }
 }
