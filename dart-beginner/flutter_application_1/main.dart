@@ -1,8 +1,7 @@
 class Player {
   final String name;
-  int xp;
+  int xp, age;
   String team;
-  int age;
 
   Player(
       {required this.name,
@@ -10,24 +9,28 @@ class Player {
       required this.team,
       required this.age});
 
+  Player.createBluePlayer({required String name, required int age})
+      : this.age = age,
+        this.name = name,
+        this.team = 'blue',
+        this.xp = 0;
+
+  Player.createRedPlayer(String name, int age)
+      : this.age = age,
+        this.name = name,
+        this.team = 'red',
+        this.xp = 0;
+
   void sayHello() {
     print("Hi my name is $name");
   }
 }
 
 void main() {
-  var player = Player(
+  var player = Player.createBluePlayer(
     name: "jisoo",
-    xp: 1200,
-    team: 'blue',
     age: 21,
   );
-  player.sayHello();
-  var player2 = Player(
-    name: "min",
-    xp: 2500,
-    team: 'blue',
-    age: 12,
-  );
-  player2.sayHello();
+
+  var redPlayer = Player.createRedPlayer("jisoo", 21);
 }
